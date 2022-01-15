@@ -49,6 +49,7 @@ OCR1A= ( 16000000 / (1/(17260.4))1000000)8) ) -1 = 34519 (rounded to an int)
  
 Some of thie might be wrong or innacurate.. its working "good enough" for me, but thought it might be useful to share
    
-Thanks to this thread
+Thanks to this thread that inspired me to make a super simple version. This is very similar, but I decided to use timers instead:
 https://www.cloudynights.com/topic/731261-yet-another-diy-ra-drive-for-eq5-exos2-eq3-etc-etc/
-that inspired me to make a super simple version. This is very similar, but I decided to use timers instead.
+
+
