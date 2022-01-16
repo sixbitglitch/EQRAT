@@ -4,7 +4,7 @@
 By Charles Gershom 
 @charlesgershom 
       
-Original Built to run a Skywatcher EQ 3-2 for polar aligned RA only sidereal tracking.
+Originally Built to run a Skywatcher EQ 3-2 for polar aligned RA only sidereal tracking.
 This was built in response to not being able to figure out why onstep wasnt tracking right
 and because I had no real idea what the drivers were doing, what the gear stuff was, or how 
 uno timers worked. 
@@ -43,9 +43,7 @@ Step_Delay_Microseconds = (Earth_Seconds_Per_Degree / MicroSteps_Per_Degree) * 1
 Step_Delay_Timer_Half_Phase = Step_Delay_Microseconds / 2
    
 I use Step_Delay_Timer_Half_Phase in the timer1 OCR1A calculations This alternates the 
-step pin Low and High to complete one full step/microstep in two phases
-  
-You can calc the valuee of OCR1A with  
+step pin Low and High to complete one full step/microstep in two phases. Timer is then calculated using:  
    
 OCR1A= ( 16000000 / (1/(Step_Delay_Timer_Half_Phase)) * 1000000) * 8) ) -1
    
