@@ -4,7 +4,7 @@ Simple Equatorial Mount Ra Sidereal Tracker for Arduino UNO/328
 By Charles Gershom 
 @charlesgershom 
       
-Original Built to run a Skywatcher EQ 3-2 for polar aligned RA only sidereal tracking.
+Originally Built to run a Skywatcher EQ 3-2 for polar aligned RA only sidereal tracking.
 This was built in response to not being able to figure out why onstep wasnt tracking right
 and because I had no real idea what the drivers were doing, what the gear stuff was, or how 
 uno timers worked. 
