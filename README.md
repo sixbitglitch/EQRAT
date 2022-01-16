@@ -1,5 +1,5 @@
 # EQRAT-UNO
-Simple Equatorial Mount Ra Sidereal Tracker for Arduino UNO/328
+##Simple Equatorial Mount Ra Sidereal Tracker for Arduino UNO/328
 
 By Charles Gershom 
 @charlesgershom 
@@ -17,7 +17,7 @@ Some of thie might be wrong or innacurate.. its working "good enough" for me, bu
 Thanks to this thread that inspired me to make a super simple version. This is very similar, but I decided to use timers instead:
 https://www.cloudynights.com/topic/731261-yet-another-diy-ra-drive-for-eq5-exos2-eq3-etc-etc/
 
-Parts Used 
+##Parts Used 
 Skywatcher EQ3-2
 1.8degree/200 Step Nema 17 Motors 
 DRV8825 Drivers set to 32 Micro Steps
@@ -27,8 +27,11 @@ CNC V3 Arduino Shield
 To modify this for your setup, input the details for your scope with the variables:
 
 Mount_Worm_Gear_Ratio
+
 Motor_Gear_Ratio
+
 Steps_Per_Rev
+
 Microstep_Setting
 
 The sketch will auto calculate the timer value based on the information below.
