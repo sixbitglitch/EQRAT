@@ -64,7 +64,7 @@ OCR1A= ( 16000000 / (1/(17260.4))*1000000)*8) ) -1 = 34520 (rounded to an int)
 */
  
 //Debug Stuff
-const bool debugEnabled=true;
+const bool debugEnabled=false;
 
 //Configuration
 const int Mount_Worm_Gear_Ratio=130;
@@ -126,8 +126,6 @@ void setup() {
   Serial.println("Starting EQRAT");
   Serial.println("--------------");
   Serial.println("Timer Calc : " + String(OCR1A_Value));
-  delay(500000);
-
   //Setup Pins  
   pinMode(stepPin, OUTPUT);   
   pinMode(dirPin, OUTPUT);    
