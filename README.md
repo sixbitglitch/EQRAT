@@ -3,7 +3,9 @@
 
 By Charles Gershom 
 @charlesgershom 
-      
+
+## About
+
 Originally Built to run a Skywatcher EQ 3-2 for polar aligned RA only sidereal tracking.
 This was built in response to not being able to figure out why onstep wasnt tracking right
 and because I had no real idea what the drivers were doing, what the gear stuff was, or how 
@@ -13,16 +15,20 @@ The intention is to have a super simple "just turn it on" sidereal motor driver 
 finding the stars manually by eye instead of goto. This is a result of a couple nights of head scratching, info reading, and learning that delayMicroseconds on arduino overflows and goes wonky above 16383... always read the documents... 
    
 Some of thie might be wrong or innacurate.. its working "good enough" for me, but thought it might be useful to share
-   
+
+
+## References
 Thanks to this thread that inspired me to make a super simple version. This is very similar, but I decided to use timers instead:
 https://www.cloudynights.com/topic/731261-yet-another-diy-ra-drive-for-eq5-exos2-eq3-etc-etc/
 
-##Parts Used 
+## Parts Used 
 Skywatcher EQ3-2
 1.8degree/200 Step Nema 17 Motors 
 DRV8825 Drivers set to 32 Micro Steps
 Arduino UNO
 CNC V3 Arduino Shield
+
+## Configuration
    
 To modify this for your setup, input the details for your scope with the variables:
 
@@ -33,6 +39,8 @@ Motor_Gear_Ratio
 Steps_Per_Rev
 
 Microstep_Setting
+
+## Timer Calculations
 
 The sketch will auto calculate the timer value based on the information below.
   
