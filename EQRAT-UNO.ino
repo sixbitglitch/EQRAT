@@ -13,9 +13,9 @@ See Readme.md
 const bool debugEnabled=false;
 
 //Configuration
-const int Mount_Worm_Gear_Ratio=130;
+const int Mount_Worm_Gear_Ratio=100;
 const int Motor_Gear_Ratio=3;
-const int Steps_Per_Rev=200;
+const int Steps_Per_Rev=400;
 const int Microstep_Setting=32;
 
 //Stuff for timer calc (doing everything as floats until its time to convert to timer)
