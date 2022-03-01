@@ -10,10 +10,10 @@ See Readme.md
 */
  
 //Debug Stuff
-const bool debugEnabled=false;
+const bool debugEnabled=true;
 
 //Configuration
-const int Mount_Worm_Gear_Ratio=100;
+const int Mount_Worm_Gear_Ratio=130;
 const int Motor_Gear_Ratio=3;
 const int Steps_Per_Rev=400;
 const int Microstep_Setting=32;
@@ -54,12 +54,8 @@ void setupTimer1() {
   TCCR1A = 0;
   TCCR1B = 0;
   TCNT1 = 0;
-
-  //EDIT THIS TO SET TIMER CORRECTLY  - See above
+  //TO SET TIMER CORRECTLY  - See above
   OCR1A=OCR1A_Value;
-  //OCR1A = 34519;
-  //EDIT THIS TO SET TIMER CORRECTLY - See above
-
   // CTC
   TCCR1B |= (1 << WGM12);
   // Prescaler 8
@@ -90,14 +86,12 @@ ISR(TIMER1_COMPA_vect) {
   //Switch the step pin state
   if(raStepState==LOW){
     raStepState=HIGH;
+    digitalWrite(RAstepPin, raStepState); 
   }
   else{
     raStepState=LOW;
+    digitalWrite(RAstepPin, raStepState); 
   }
-
-   //Write to the step pin
-   digitalWrite(RAstepPin, raStepState); 
-
    //Do some counting if debug is enabled
    if(debugEnabled)
       timerCount();
