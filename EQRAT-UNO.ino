@@ -35,10 +35,13 @@ unsigned int OCR1A_Value = round(OCR1A_Calc_Value);
 long lastTime=0;
 long currentTime=0;
 
-
 //Ra Stepper Config
-const int dirPin = 5;   
-const int stepPin = 2;    
+const int RAdirPin = 5;   
+const int RAstepPin = 2;    
+
+//Dec Stepper Config
+const int DECdirPin = 6;   
+const int DECstepPin = 3;    
 
 //Ra Stepper State
 uint8_t raStepState=LOW;
@@ -73,9 +76,9 @@ void setup() {
   Serial.println("--------------");
   Serial.println("Timer Calc : " + String(OCR1A_Value));
   //Setup Pins  
-  pinMode(stepPin, OUTPUT);   
-  pinMode(dirPin, OUTPUT);    
-  digitalWrite(dirPin, LOW);   // invert this (HIGH) if wrong direction    
+  pinMode(RAstepPin, OUTPUT);   
+  pinMode(RAdirPin, OUTPUT);    
+  digitalWrite(RAdirPin, HIGH);   // invert this (HIGH) if wrong direction    
 
   //Setup and start Timer
   setupTimer1();
@@ -93,7 +96,7 @@ ISR(TIMER1_COMPA_vect) {
   }
 
    //Write to the step pin
-   digitalWrite(stepPin, raStepState); 
+   digitalWrite(RAstepPin, raStepState); 
 
    //Do some counting if debug is enabled
    if(debugEnabled)
