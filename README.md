@@ -23,7 +23,7 @@ https://www.cloudynights.com/topic/731261-yet-another-diy-ra-drive-for-eq5-exos2
 
 ## Parts Used 
 Skywatcher EQ3-2
-1.8degree/200 Step Nema 17 Motors 
+0.9degree/400 Step Nema 17 Motors 
 DRV8825 Drivers set to 32 Micro Steps
 Arduino UNO
 CNC V3 Arduino Shield
