@@ -8,14 +8,16 @@ By Charles Gershom
 See Readme.md
 
 */
- 
+
 //Debug Stuff
 const bool debugEnabled=true;
 
 //Configuration
-const int Mount_Worm_Gear_Ratio=130;
-const int Motor_Gear_Ratio=3;
-const int Steps_Per_Rev=400;
+const int Mount_Worm_Gear_Ratio_RA=130; //RA SKYWATCHER EQ 3-2
+const int Mount_Worm_Gear_Ratio_Dec=65; //DEC SKYWATCHER EQ 3-2
+const float Motor_Gear_Ratio_RA=2.5; //30/12 - Asteron Drive Kit Light
+const float Motor_Gear_Ratio_DEC=3; //30/12 - Asteron Drive Kit Light
+const int Steps_Per_Rev=200;
 const int Microstep_Setting=32;
 
 //Stuff for timer calc (doing everything as floats until its time to convert to timer)
@@ -23,9 +25,8 @@ const int Microstep_Setting=32;
 const float Seconds_Earth_Rotate=86164.09053;
 const float processorSpeed=16000000;
 
-
 float Earth_Seconds_Per_Degree =Seconds_Earth_Rotate / 360.0;
-float MicroSteps_Per_Degree =((float)Mount_Worm_Gear_Ratio * (float)Motor_Gear_Ratio *  (float)Steps_Per_Rev * (float)Microstep_Setting) / 360.0;
+float MicroSteps_Per_Degree =((float)Mount_Worm_Gear_Ratio_RA * (float)Motor_Gear_Ratio_RA *  (float)Steps_Per_Rev * (float)Microstep_Setting) / 360.0;
 float Step_Delay_Microseconds =(Earth_Seconds_Per_Degree / MicroSteps_Per_Degree) * 1000000.0;
 float Step_Delay_Timer_Half_Phase=Step_Delay_Microseconds / 2.0;
 
@@ -36,12 +37,15 @@ long lastTime=0;
 long currentTime=0;
 
 //Ra Stepper Config
-const int RAdirPin = 5;   
-const int RAstepPin = 2;    
+const int RAdirPin = 9;   
+const int RAstepPin = 10;    
 
 //Dec Stepper Config
-const int DECdirPin = 6;   
+const int DECdirPin = 4;   
 const int DECstepPin = 3;    
+
+const int EnablePin = 12;   
+const int MicrostepSelect = 11;   
 
 //Ra Stepper State
 uint8_t raStepState=LOW;
@@ -75,7 +79,8 @@ void setup() {
   pinMode(RAstepPin, OUTPUT);   
   pinMode(RAdirPin, OUTPUT);    
   digitalWrite(RAdirPin, HIGH);   // invert this (HIGH) if wrong direction    
-
+ digitalWrite(EnablePin, LOW);  
+  digitalWrite(MicrostepSelect, HIGH);  
   //Setup and start Timer
   setupTimer1();
     
