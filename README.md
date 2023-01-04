@@ -16,6 +16,7 @@ finding the stars manually by eye instead of goto. This is a result of a couple 
    
 Some of thie might be wrong or innacurate.. its working "good enough" for me, but thought it might be useful to share
 
+*Update, recently got an Asterion Drive Kit Light, and modified this to run on that platform
 
 ## References
 Thanks to this thread that inspired me to make a super simple version. This is very similar, but I decided to use timers instead:
