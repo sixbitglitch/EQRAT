@@ -1,8 +1,6 @@
 # EQRAT-UNO
 Simple Equatorial Mount RA Sidereal Tracker for Arduino UNO/328
 
-By Charles Gershom 
-@charlesgershom 
 
 ## Overview
 
